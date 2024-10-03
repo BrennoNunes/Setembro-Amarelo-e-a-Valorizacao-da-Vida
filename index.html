@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Setembro Amarelo, prevenção ao suicídio, valorização da vida.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setembro Amarelo - Valorização da Vida</title>
+    <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background-color: #fff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #FFD700;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .banner {
+            position: relative;
+            height: auto;
+            background-color: #ffd700;
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px 0;
+            box-sizing: border-box;
+
+        }
+
+        .banner img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            max-height: 300px; 
+        }
+
+        .banner h1 {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .banner p {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5em;
+        }
+
+        .section {
+            margin: 20px;
+            padding: 20px;
+            text-align: justify;
+            background-color: transparent;
+            border: none;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        h2 {
+            color: black;
+        } 
+
+        p {
+            color: black;
+            margin-bottom: 15px;
+            text-align: justify;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .interactive {
+            cursor: pointer;
+        }
+
+        .details {
+            display: none;
+            margin-top: 10px;
+            color: #555;
+        }
+
+        .footer {
+            text-align: left ;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+        }
+
+        .footer-section h2 {
+            font-size: 24px;
+            color: #f5eded;
+            margin-bottom: 10px;
+            text-align: left;
+
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .additional-info {
+            text-align: left;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: auto;
+        }
+
+        .additional-info h2 {
+            margin-bottom: 20px;
+            color:#f3f2ef
+        }
+
+        .additional-info p {
+            font-size: 14px;
+            margin-top: 200px;
+            color: white;
+        }
+
+        .additional-info a img {
+            display: block;
+            margin: 10px auto;
+            cursor: pointer;
+        }
+
+        .second-footer {
+            background-color: #797979;
+            padding: 5px;
+            text-align:center;
+            color: white;
+            margin-top: 0px;
+        }
+
+        .second-footer p {
+            margin: 3px;
+            font-size: 10px;
+            color: #fff;
+        }
+
+
+        .call-button {
+            background-color: #FFD700;
+            color: white;
+            padding: 15px 30px;
+            font-size: 20px;
+            text-decoration: none;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 1px;
+        }
+
+        .call-button img {
+            width: 40px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .call-button :hover {
+            background-color: #FFD700;
+        }
+
+        .call-section {
+           background-color: #fff; 
+           padding: 40px 0; 
+           text-align: center;
+        }
+
+        .call-section h2 {
+           font-size: 24px;
+           color: #333; 
+           margin-bottom: 40px;
+        }
+
+        .call-section .call-button {
+            background-color: #FFD700; 
+            color: white; 
+            padding: 15px 35px;
+            font-size: 20px;
+            text-decoration: none;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 20px auto;
+        }
+
+        .call-section .call-button img {
+            width: 30px;
+            vertical-align: middle;
+            margin-right: 20px;
+        }  
+
+        
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            text-align: left;
+        }
+
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .texto-centralizado {
+            max-width: 950px;  
+            margin: 0 auto;    
+            padding: 20px;     
+            font-size: 16px;   
+            line-height: 1.6;  
+        }
+
+
+    </style>
+    <script>
+        function toggleDetails(element) {
+            const details = element.querySelector('.details');
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <img src="imagens/sa.png" alt="Banner sobre a valorização da vida" width="100%" height="auto">
+        </div>
+    </header>
+    
+    <section class="content">
+        <div class="texto-centralizado">
+        <div class="section">
+            <h2>Sobre o Setembro Amarelo</h2>
+            <p>Setembro Amarelo é uma campanha de conscientização sobre a prevenção do suicídio, que acontece anualmente em todo o Brasil. Criada em 2015, a iniciativa tem como objetivo principal promover a valorização da vida, incentivando o diálogo aberto sobre saúde mental e a importância de buscar ajuda.</p>
+
+<p>A cor amarela foi escolhida para simbolizar a luz que ilumina a vida, trazendo esperança e motivação para aqueles que enfrentam dificuldades. Durante o mês de setembro, diversas ações são realizadas, como palestras, rodas de conversa e campanhas em redes sociais. Essas atividades visam informar a população sobre os sinais de alerta, os fatores de risco e, principalmente, como procurar e oferecer ajuda de forma adequada.</p>
+
+<p>É essencial que a sociedade entenda que o suicídio não é um tabu e deve ser abordado com empatia e respeito. Falar sobre o assunto é fundamental para desmistificar preconceitos e ajudar as pessoas a se sentirem mais à vontade para buscar apoio. Além disso, a campanha busca educar sobre a importância da saúde mental, mostrando que é normal ter dificuldades e que existem recursos disponíveis para superá-las.</p>
+
+<p>O Setembro Amarelo também enfatiza a necessidade de um olhar mais atento para as questões emocionais, especialmente entre jovens e adultos, que muitas vezes enfrentam pressões sociais, acadêmicas e profissionais que podem levar a um estado de vulnerabilidade.</p>
+
+<p>Por meio de mobilizações sociais, a campanha incentiva a formação de grupos de apoio e a participação ativa na promoção da saúde mental. O envolvimento de escolas, universidades, empresas e instituições de saúde é fundamental para criar um ambiente de apoio e solidariedade.</p>
+
+<p>Cada um de nós pode fazer a diferença ao estar atento ao comportamento de amigos, familiares e colegas. Se percebermos mudanças significativas, como isolamento, apatia ou falas sobre desistência, é importante intervir de maneira sensível e encorajadora, oferecendo apoio e compreensão.</p>
+
+        </div>
+    
+        <div class="section">
+            <h2>Como ajudar alguém?</h2>
+            <p>Oferecer apoio a alguém que está passando por dificuldades emocionais é uma das formas mais eficazes de ajudar. Estar disponível para ouvir, sem julgamentos, é um dos primeiros passos para criar um ambiente acolhedor. Muitas vezes, as pessoas que enfrentam problemas de saúde mental sentem-se sozinhas e incompreendidas, e ter alguém para conversar pode fazer toda a diferença.</p>
+
+<p>É importante criar um espaço seguro, onde a pessoa se sinta à vontade para expressar seus sentimentos e pensamentos. Demonstrar empatia e compreensão é fundamental para estabelecer essa conexão.</p>
+
+<p>Além disso, é crucial encorajar a busca por apoio profissional. Muitas vezes, o apoio de amigos e familiares não é suficiente, e a orientação de um psicólogo ou psiquiatra pode ser vital. Incentivar a pessoa a procurar ajuda profissional pode ser um passo decisivo em sua jornada de recuperação.</p>
+
+<p>No entanto, é importante lembrar que a abordagem deve ser delicada e respeitosa. Fazer com que a pessoa sinta que tem o controle sobre sua própria vida e decisões é fundamental. Simples gestos, como enviar uma mensagem ou fazer uma visita, podem mostrar que você se importa e está presente.</p>
+
+<p>Mesmo que a pessoa não esteja pronta para conversar sobre seus sentimentos, saber que você está ao seu lado pode oferecer um grande conforto. Pequenos atos de bondade, como cozinhar uma refeição ou passar um tempo juntos, podem ajudar a aliviar a sensação de solidão. No entanto, é crucial respeitar os limites da pessoa e não forçá-la a falar antes que ela esteja pronta.</p>
+
+<p>A presença e a atenção são as melhores ferramentas que você pode oferecer a alguém que está passando por um momento difícil. Além de estar presente, oferecer recursos, como informações sobre serviços de apoio ou linhas de ajuda, pode ser muito útil.</p>
+
+<p>E lembre-se: cuidar de si mesmo também é importante. Para ajudar alguém, é fundamental que você esteja em um bom lugar emocionalmente, portanto, não hesite em buscar suporte para si mesmo, se necessário.</p>
+
+        </div>
+    
+        <div class="section">
+            <h2>Fatores de Risco</h2>
+            <ul>
+                <li>Transtornos mentais: Condições como depressão, transtorno bipolar e ansiedade são algumas das principais causas de risco para o suicídio. Pessoas que enfrentam essas condições podem sentir uma intensidade emocional que dificulta o enfrentamento de situações desafiadoras.</li>
+        <li>Abuso de substâncias: O uso excessivo de álcool e drogas pode aumentar a impulsividade e diminuir a capacidade de tomar decisões racionais, elevando o risco de comportamentos autodestrutivos.</li>
+        <li>Questões sociais: Isolamento social, bullying, discriminação ou falta de apoio familiar podem criar um sentimento de desespero e solidão, levando ao aumento do risco.</li>
+        <li>Eventos traumáticos: Experiências como a perda de um ente querido, divórcio, dificuldades financeiras ou abuso físico/emocional podem impactar profundamente a saúde mental e aumentar os riscos.</li>
+        <li>Mudanças comportamentais: Sinais como isolamento social, perda de interesse em atividades anteriormente prazerosas, e comentários sobre desistir da vida são alertas importantes de que uma pessoa pode estar em risco.</li>
+        <li>Histórico familiar: Ter um histórico familiar de suicídio ou problemas de saúde mental pode aumentar a vulnerabilidade a esses comportamentos.</li>
+        <li>Problemas de relacionamento: Conflitos intensos em relacionamentos, seja com familiares, parceiros ou amigos, podem levar a sentimentos de desesperança.</li>
+        <li>Pressão acadêmica ou profissional: O estresse intenso por desempenho em estudos ou trabalho pode ser esmagador, especialmente em jovens.</li>
+        <li>Problemas de saúde física: Doenças crônicas ou dor persistente podem contribuir para um estado mental negativo, aumentando o risco de suicídio.</li>
+        <li>Falta de acesso a serviços de saúde mental: Em muitos casos, a falta de recursos ou serviços adequados para tratar problemas de saúde mental pode intensificar os riscos.</li>
+    </ul>
+        </div>
+    
+        <div class="section">
+            <h2>Fatores de Proteção</h2>
+            <ul>
+                <li>Apoio social: Ter amigos, familiares ou uma rede de apoio forte pode oferecer suporte emocional essencial e encorajar a busca por ajuda profissional.</li>
+                <li>Cuidados de saúde mental: O acesso a psicólogos, psiquiatras e outros profissionais de saúde mental pode ser crucial para o tratamento e a recuperação.</li>
+                <li>Atividades físicas: A prática regular de exercícios físicos não apenas melhora a saúde física, mas também libera endorfinas, que podem melhorar o humor e reduzir os sentimentos de ansiedade e depressão.</li>
+                <li>Comunidades religiosas ou espirituais: Participar de grupos de fé ou espiritualidade pode oferecer um senso de pertencimento e suporte emocional, além de proporcionar um espaço para discussão e reflexão.</li>
+                <li>Propósito de vida: Ter metas claras, um propósito definido e um ambiente estável pode ajudar a manter um estado mental positivo e encorajar a resiliência.</li>
+                <li>Educação sobre saúde mental: Conhecer os sinais e sintomas de problemas de saúde mental e suicídio pode ajudar as pessoas a reconhecerem suas próprias necessidades ou as de outros.</li>
+                <li>Habilidades de enfrentamento: Desenvolver habilidades eficazes para lidar com o estresse e a adversidade pode ajudar a pessoa a enfrentar desafios de forma mais saudável.</li>
+                <li>Conexões sociais: Participar de grupos comunitários, atividades recreativas ou voluntariado pode fortalecer as conexões sociais e proporcionar um senso de pertencimento.</li>
+                <li>Ambiente seguro: Ter um espaço seguro e acolhedor em casa ou na escola pode fazer uma diferença significativa na saúde mental de um indivíduo.</li>
+                <li>Intervenções precoces: Programas de prevenção e intervenções em escolas e comunidades podem ajudar a identificar e apoiar indivíduos em risco antes que a situação se agrave.</li>
+        </div>
+        </div>
+        
+        <div class="call-section">
+        <h2> Telefone para ligar ao CVV (188) </h2>
+            <a href="tel:188" class="call-button">
+                <img src="imagens/telefone1.png" alt="Telefone"> Ligue para o CVV - 188
+            </a>
+        </div>
+
+    </section>
+    <footer class="footer">
+        
+    <div class="additional-info"> 
+        <h2> Slide sobre o setembro amarelo:</h2>
+        <a href="pdf/Setembro Amarelo (1).pdf" target="_blank" style="display: inline-block;">
+            <img src="imagens/pdf.png" alt="Abrir PDF" style="width: 100px; height: auto;">
+        </a>
+    </div>
+
+    <div class="footer-section profiles">
+        <h2>Perfis</h2>
+        <ul>
+            <li><a href="https://www.instagram.com/brennoirlan?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"<i class="fas fa-user"></i> Brenno</a></li>
+            <li><a href="https://www.instagram.com/yarlei_cunha?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"<i class="fas fa-user"></i> Yarlei</a></li>
+        </ul>
+    </div>
+    </footer>
+    
+    <footer>
+    <div class="second-footer">
+        <p>Site programado em linguagens HTML, CSS e JavaScript. Feito por Brenno Nunes e Antonio Yarlei.</p>
+    </div>
+    </footer>
+</body>
+</html>
